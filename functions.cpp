@@ -70,14 +70,6 @@ void flashString(int timeUnit, const vector<vector<int>>& morseCode, string word
     }
 }
 
-
-void printSentence(int timeUnit, string sentence) {
-    //oops
-}
-
-
-
-
 // Rules for morse code
 // The length of a dot is 1 time unit.
 // A dash is 3 time units.

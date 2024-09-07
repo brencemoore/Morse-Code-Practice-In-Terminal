@@ -16,6 +16,5 @@ void flashDot(int);
 void flashDash(int);
 void flashLetter(int, const vector<vector<int>>&, char);
 void flashWord(int, const vector<vector<int>>&, string);
-// void printSentence(int, string);
 
 #endif
