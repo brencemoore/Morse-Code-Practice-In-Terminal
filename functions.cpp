@@ -20,7 +20,7 @@ void flashDash(int timeUnit) {
 }
 
 
-// flashes a letter
+// Flashes a letter
 void flashLetter(int timeUnit, const vector<vector<int>>& morseCode, char letter) {
     // -97 is to make letters a-z ACSII decimal unit to be 0-25 for the indexes of the morseCode array
     // (ACSII decimal value for 'a' is 97 so subtracting 97 makes the index for 'a' 0)
@@ -45,9 +45,28 @@ void flashLetter(int timeUnit, const vector<vector<int>>& morseCode, char letter
 
 
 // Flashes a string
-void flashString(int timeUnit, string word) {
+void flashString(int timeUnit, const vector<vector<int>>& morseCode, string word) {
     for (int i = 0; i < word.size(); ++i) {
+
+        // If the character is a letter it is printed in flashes
+        if (isalpha(word.at(i))) {
+            flashLetter(timeUnit, morseCode, word.at(i));
+            
+            // The space between letters is 3 time units (flash letter ends with 1 time unit, so add 2 * timeUnit)
+            this_thread::sleep_for(chrono::milliseconds(timeUnit * 2));
+        }
+
+        // Checks for a space, meaning a new word starts
+        else if (isspace(word.at(i))) {
+
+            // The space between words is 7 time units (end of letter is 3 time units so add 4)
+            this_thread::sleep_for(chrono::milliseconds(timeUnit * 4));
+        }
+        // Does not check for punctuation or numbers
+        // Morse code of punctuation and numbers exists, but I do not want to practice those with this program
         
+        // If you want to add punctuation or numbers to this, then you will have to change the morseCode vector of vectors to have those instructions
+        // and have to allign the indexes with the ASCII chart decimal values. Also the -97 will have to change to allign with ASCII as well.
     }
 }
 

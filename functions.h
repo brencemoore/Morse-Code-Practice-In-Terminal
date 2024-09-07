@@ -2,7 +2,7 @@
 #define FUNCTIONS_H
 
 #include <iostream>
-// #include <iomanip>
+#include <cctype>
 #include <string>
 #include <thread>
 #include <chrono>
@@ -15,7 +15,7 @@ void printFlash();
 void flashDot(int);
 void flashDash(int);
 void flashLetter(int, const vector<vector<int>>&, char);
-void flashWord(int, string);
-void printSentence(int, string);
+void flashWord(int, const vector<vector<int>>&, string);
+// void printSentence(int, string);
 
 #endif
