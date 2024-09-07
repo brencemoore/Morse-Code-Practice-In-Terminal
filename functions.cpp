@@ -7,20 +7,21 @@ void printFlash() {
     }
 }
 
-void printDot(int timeUnit) {
+void flashDot(int timeUnit) {
     // Time for a dot is 1 time unit
     printFlash();
     this_thread::sleep_for(chrono::milliseconds(timeUnit));
 }
 
-void printDash(int timeUnit) {
+void flashDash(int timeUnit) {
     // Time for a dash is 3 time units
     printFlash();
     this_thread::sleep_for(chrono::milliseconds(timeUnit * 3));
 }
 
-// vector const reference
-void printLetter(int timeUnit, const vector<vector<int>>& morseCode, char letter) {
+
+// flashes a letter
+void flashLetter(int timeUnit, const vector<vector<int>>& morseCode, char letter) {
     // -97 is to make letters a-z ACSII decimal unit to be 0-25 for the indexes of the morseCode array
     // (ACSII decimal value for 'a' is 97 so subtracting 97 makes the index for 'a' 0)
     int letterIndex = int(letter) - 97;
@@ -28,10 +29,10 @@ void printLetter(int timeUnit, const vector<vector<int>>& morseCode, char letter
     system("cls");
     for (int i = 0; i < morseCode.at(letterIndex).size(); ++i) {
         if (morseCode.at(letterIndex).at(i) == 0) {
-            printDot(timeUnit);
+            flashDot(timeUnit);
         }
         else {
-            printDash(timeUnit);
+            flashDash(timeUnit);
         }
 
         // Clearing screen imitates a flashing lights
@@ -43,7 +44,8 @@ void printLetter(int timeUnit, const vector<vector<int>>& morseCode, char letter
 }
 
 
-void printWord(int timeUnit, string word) {
+// Flashes a string
+void flashString(int timeUnit, string word) {
     for (int i = 0; i < word.size(); ++i) {
         
     }

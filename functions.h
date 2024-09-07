@@ -12,10 +12,10 @@
 using namespace std;
 
 void printFlash();
-void printDot(int);
-void printDash(int);
-void printLetter(int, const vector<vector<int>>&, char);
-void printWord(int, string);
+void flashDot(int);
+void flashDash(int);
+void flashLetter(int, const vector<vector<int>>&, char);
+void flashWord(int, string);
 void printSentence(int, string);
 
 #endif

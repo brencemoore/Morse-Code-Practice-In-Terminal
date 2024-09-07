@@ -36,7 +36,7 @@ int main() {
     // } while (menuChoice != "0");
 
     do {
-        printLetter(timeUnit, morseCode, 'f');
+        flashLetter(timeUnit, morseCode, 'f');
         cout << "again?:  ";
         getline(cin, answer);
 
