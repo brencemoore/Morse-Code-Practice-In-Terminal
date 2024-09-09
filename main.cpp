@@ -19,7 +19,7 @@ int main() {
 
 
     do {
-        system("cls");  // For menu formating
+        // system("cls");  // For menu formating
 
         cout << "\n\nMorse Code Practice" << endl << endl;
         cout << "\nSelect a way to practice morse code below." << endl
@@ -40,14 +40,23 @@ int main() {
             cin >> menuChoice;
         }
 
+        // Practice flashing light morse code
+        if (menuChoice == 2) {
+            practiceFlashingMorse(timeUnit, morseCode);
+        }
 
     } while (menuChoice != 0);
 
 
 
+
     return 0;
 
-    string code = "secret code";
+    string code;
+
+    cout << "Enter code: ";
+    cin >> code;
+    cin.ignore();
 
     do {
         this_thread::sleep_for(chrono::milliseconds(1500));
