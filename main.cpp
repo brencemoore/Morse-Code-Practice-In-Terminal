@@ -3,9 +3,9 @@
 int main() {
 
     string answer;
-    string menuChoice;
     string flash('#', 20);
-    int timeUnit = 100;
+    int menuChoice;
+    int timeUnit = 150;
 
     // Each subvector is a series of 0s and 1s where 0 is a dot and 1 is a dash
     const vector<vector<int>> morseCode {
@@ -18,29 +18,52 @@ int main() {
     };
 
 
-    // do {
-    //     system("cls");  // For menu formating
+    do {
+        system("cls");  // For menu formating
 
-    //     cout << "\n\nMorse Code Practice" << endl << endl;
-    //     cout << "\nSelect a way to practice morse code below." << endl
-    //          << "1.\tPractice written" << endl
-    //          << "2.\tPractice lights" << endl
-    //          << "3.\tMorse code guide" << endl
-    //          << "4.\tSettings" << endl
-    //          << "0.\tQuit" << endl << endl;
-    //     cout << "Enter a number 0-4:  ";
+        cout << "\n\nMorse Code Practice" << endl << endl;
+        cout << "\nSelect a way to practice morse code below." << endl
+             << "1.\tPractice written" << endl
+             << "2.\tPractice lights" << endl
+             << "3.\tMorse code guide" << endl
+             << "4.\tSettings" << endl
+             << "0.\tQuit" << endl << endl;
+        cout << "Enter a number 0-4:  ";
 
-    //     cin >> menuChoice;
+        cin >> menuChoice;
+
+        // Validates user input
+        while (!cin || menuChoice > 4 || menuChoice < 0) {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout << "Enter a number 0-4:  ";
+            cin >> menuChoice;
+        }
 
 
-    // } while (menuChoice != "0");
+    } while (menuChoice != 0);
+
+
+
+    return 0;
+
+    string code = "secret code";
 
     do {
-        flashLetter(timeUnit, morseCode, 'f');
+        this_thread::sleep_for(chrono::milliseconds(1500));
+
+        flashString(timeUnit, morseCode, code);
         cout << "again?:  ";
         getline(cin, answer);
 
-    } while (answer == "");
+    } while (answer == "");\
+    
+    if (answer == code) {
+        cout << "\nCorrect!" << endl;
+    }
+    else {
+        cout << "\nIncorrect." << endl;
+    }
     
     return 0;
 }
