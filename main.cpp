@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "practiceFunctions.h"
 
 int main() {
 

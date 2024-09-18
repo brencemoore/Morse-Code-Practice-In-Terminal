@@ -1,5 +1,5 @@
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+#ifndef PRINTINGFUNCTIONS_H
+#define PRINTINGFUNCTIONS_H
 
 #include <iostream>
 #include <cctype>
@@ -8,8 +8,6 @@
 #include <chrono>
 #include <fstream>
 #include <vector>
-#include <ctime>
-#include <cstdlib>
 
 using namespace std;
 
