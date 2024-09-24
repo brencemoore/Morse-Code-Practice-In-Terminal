@@ -5,4 +5,7 @@
 #include <ctime>
 #include <cstdlib>
 
+void practicePrintedMorse(int, const vector<vector<int>>&);
+void practiceFlashingMorse(int, const vector<vector<int>>&);
+
 #endif

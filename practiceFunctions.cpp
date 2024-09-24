@@ -61,6 +61,11 @@ void practiceFlashingMorse(int timeUnit, const vector<vector<int>>& morseCode) {
                 getline(cin, answer);
             } while (answer == "y" || answer == "Y");
         }
+
+        // User guesses a random word in flashing morse code
+        if (menuChoice == 2) {
+            
+        }
         
 
     } while (menuChoice != 0);

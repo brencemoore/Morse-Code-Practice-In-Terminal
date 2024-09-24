@@ -17,7 +17,4 @@ void flashDash(int);
 void flashLetter(int, const vector<vector<int>>&, char);
 void flashString(int, const vector<vector<int>>&, string);
 
-void practicePrintedMorse(int, const vector<vector<int>>&);
-void practiceFlashingMorse(int, const vector<vector<int>>&);
-
 #endif
