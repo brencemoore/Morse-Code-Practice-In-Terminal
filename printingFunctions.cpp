@@ -70,6 +70,27 @@ void flashString(int timeUnit, const vector<vector<int>>& morseCode, string word
     }
 }
 
+void printWrittenLetter(const vector<vector<int>>& morseCode, char letter) {
+    // -97 is to make letters a-z ACSII decimal unit to be 0-25 for the indexes of the morseCode array
+    // (ACSII decimal value for 'a' is 97 so subtracting 97 makes the index for 'a' 0)
+    int letterIndex = int(letter) - 97;
+
+    system("cls");
+    for (int i = 0; i < morseCode.at(letterIndex).size(); ++i) {
+        if (morseCode.at(letterIndex).at(i) == 0) {
+            cout << ".";
+        }
+        else {
+            cout << "-";
+        }
+    }
+    cout << " ";
+}
+
+
+void printWrittenString(const vector<vector<int>>&, string);
+
+
 // Rules for morse code
 // The length of a dot is 1 time unit.
 // A dash is 3 time units.

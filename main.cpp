@@ -40,6 +40,11 @@ int main() {
             cin >> menuChoice;
         }
 
+        // Practice written morse code
+        if (menuChoice == 1) {
+            practicePrintedMorse(timeUnit, morseCode);
+        }
+
         // Practice flashing light morse code
         if (menuChoice == 2) {
             practiceFlashingMorse(timeUnit, morseCode);
