@@ -1,4 +1,5 @@
 #include "practiceFunctions.h"
+#include "settings.h"
 
 int main() {
 
@@ -53,31 +54,8 @@ int main() {
     } while (menuChoice != 0);
 
 
+    // Settings test;
+    // test.printSettings();
 
-
-    return 0;
-
-    string code;
-
-    cout << "Enter code: ";
-    cin >> code;
-    cin.ignore();
-
-    do {
-        this_thread::sleep_for(chrono::milliseconds(1500));
-
-        flashString(timeUnit, morseCode, code);
-        cout << "again?:  ";
-        getline(cin, answer);
-
-    } while (answer == "");\
-    
-    if (answer == code) {
-        cout << "\nCorrect!" << endl;
-    }
-    else {
-        cout << "\nIncorrect." << endl;
-    }
-    
     return 0;
 }
