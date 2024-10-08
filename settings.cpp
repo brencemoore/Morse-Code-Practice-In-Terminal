@@ -4,7 +4,7 @@
 
 Settings::Settings() {
     std::fstream file;
-    std::vector<std::string> settingList;
+    std::vector<std::string> settingList(7);
 
     file.open("settings.txt", std::ios::in);
 
@@ -20,6 +20,8 @@ Settings::Settings() {
         qcodes = false;
     }
     else {
+        file.close();
+
         readData(settingList);
 
         timeUnitLength = stoi(settingList.at(0));
@@ -32,14 +34,14 @@ Settings::Settings() {
     }
 }
 
-void readData(std::vector<std::string> &settingList) {
+void Settings::readData(std::vector<std::string> &settingList) {
     std::string data;
     std::fstream file;
     int i = 0;
     int colonIndex;
     int dataLength;
 
-    file.open("settings.txt", std::ios::trunc);
+    file.open("settings.txt", std::ios::in);
     
     while (getline(file, data)) {
         dataLength = data.length();
@@ -48,6 +50,18 @@ void readData(std::vector<std::string> &settingList) {
         settingList.at(i) = data;
         i += 1;
     }
+
+    file.close();
+}
+
+void Settings::printSettings() {
+    std::cout << timeUnitLength << std::endl
+                << printCharacter << std::endl
+                << printWidth << std::endl
+                << printHeight << std::endl 
+                << numbers << std::endl 
+                << punctuation << std::endl 
+                << qcodes << std::endl;
 }
 
 /*
