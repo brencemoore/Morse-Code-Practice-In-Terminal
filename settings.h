@@ -22,13 +22,44 @@ public:
     Settings();
     void printSettings();
     void saveSettings();
-};
 
-void loadSettings();
-void saveSettings();
-void loadWords();
-void loadWords(std::string);
-void loadSentences();
-void loadSentences(std::string);
+    int getTimeUnit() {return timeUnitLength;}
+    char getPrintCharacter() {return printCharacter;}
+    int getPrintWidth() {return printWidth;}
+    int getPrintHeight() {return printHeight;}
+    bool getNumbers() {return numbers;}
+    bool getPunctuation() {return punctuation;}
+    bool getQcodes() {return qcodes;}
+    std::string getWordFile() {return wordFile;}
+    std::string getSentenceFile() {return sentenceFile;}
+
+    void setTimeUnit(int time) {
+        timeUnitLength = time;
+    }
+    void setPrintCharacter(char character) {
+        printCharacter = character;
+    }
+    void setPrintWidth(int width) {
+        printWidth = width;
+    }
+    void setPrintHeight(int height) {
+        printHeight = height;
+    }
+    void setNumbers(bool active) {
+        numbers = active;
+    }
+    void setPunctuation(bool active) {
+        punctuation = active;
+    }
+    void setQcodes(bool active) {
+        qcodes = active;
+    }
+    void setWordFile(std::string fileName) {
+        wordFile = fileName;
+    }
+    void setSentenceFile(std::string fileName) {
+        sentenceFile = fileName;
+    }
+};
 
 #endif
