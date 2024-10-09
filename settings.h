@@ -20,8 +20,8 @@ private:
 
 public:
     Settings();
-
     void printSettings();
+    void saveSettings();
 };
 
 void loadSettings();

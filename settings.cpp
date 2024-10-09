@@ -1,6 +1,7 @@
 #include "settings.h"
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 Settings::Settings() {
     std::fstream file;
@@ -68,26 +69,52 @@ void Settings::readData(std::vector<std::string> &settingList) {
 }
 
 void Settings::printSettings() {
-    std::cout << timeUnitLength << "," << std::endl
-                << printCharacter << "," << std::endl
-                << printWidth << "," << std::endl
-                << printHeight << "," << std::endl 
-                << numbers << "," << std::endl 
-                << punctuation << "," << std::endl 
-                << qcodes << "," << std::endl
-                << wordFile << "," << std::endl
-                << sentenceFile << "," << std::endl;
+    std::cout << "\n\nSettings" << std::endl << std::endl << std::endl;
+
+    std::right;
+    std::cout << "Flash Settings:" << std::endl << "------------------------------" << std::endl;
+    std::cout << "1. " << std::setw(18) << "Time Unit Length: " << timeUnitLength << std::endl;
+    std::cout << "2. " << std::setw(18) << "Print Character: " << printCharacter << "\t\t(character used when printing flash)" << std::endl;
+    std::cout << "3. " << std::setw(18) << "Print Width: " << printWidth << "\t\t(characters per row when printing flash)" << std::endl;
+    std::cout << "4. " << std::setw(18) << "Print Height: " << printHeight << "\t\t(number of rows when printing flash)" << std::endl << std::endl;
+
+    std::cout << "Practice Settings:" << std::endl << "------------------------------" << std::endl;
+    std::cout << "5. " << std::setw(18) << "Numbers: ";
+    if (numbers == 0) {std::cout << "FALSE";} else {std::cout << "TRUE";}
+    std::cout << std::endl;
+
+    std::cout << "6. " << std::setw(18) << "Punctuation: ";
+    if (punctuation == 0) {std::cout << "FALSE";} else {std::cout << "TRUE";}
+    std::cout << std::endl;
+
+    std::cout << "7. " << std::setw(18) << "Q-Codes: ";
+    if (qcodes == 0) {std::cout << "FALSE";} else {std::cout << "TRUE";}
+    std::cout << std::endl;
+
+    std::cout << "Random File Settings:" << std::endl << "------------------------------" << std::endl;
+    std::cout << "8. " << std::setw(18) << "Words File: " << wordFile << std::endl;
+    std::cout << "9. " << std::setw(18) << "Sentences File: " << sentenceFile << std::endl;
 }
+
+void Settings::saveSettings() {
+    std::ofstream file;
+    file.open("settings.txt");
+
+    file << "time_unit_length:" << timeUnitLength << std::endl;
+    file << "print_character:" << printCharacter << std::endl;
+    file << "print_width:" << printWidth << std::endl;
+    file << "print_height:" << printHeight << std::endl;
+    file << "numbers:" << numbers << std::endl;
+    file << "punctuation:" << punctuation << std::endl;
+    file << "qcodes:" << qcodes << std::endl;
+    file << "default_word_file:" << wordFile << std::endl;
+    file << "default_sentence_file:" << sentenceFile;
+
+    file.close();
+}
+
 
 /*
-void saveSettings() {
-    std::fstream file;
-    file.open("settings.txt", std::ios::trunc);
-
-    file << ""
-}
-
-
 void loadWords() {
 
 }

@@ -54,8 +54,9 @@ int main() {
     } while (menuChoice != 0);
 
 
-    // Settings test;
-    // test.printSettings();
+    Settings test;
+    test.printSettings();
+    test.saveSettings();
 
     return 0;
 }
