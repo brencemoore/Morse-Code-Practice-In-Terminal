@@ -13,6 +13,8 @@ private:
     bool numbers;
     bool punctuation;
     bool qcodes;
+    std::string wordFile;
+    std::string sentenceFile;
 
     void readData(std::vector<std::string>&);
 
