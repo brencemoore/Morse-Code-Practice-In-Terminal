@@ -12,6 +12,7 @@ Settings::Settings() {
     if (!file.is_open()) {
         std::cout << std::endl << "Could not open settings.txt.\nNew settings file created." << std::endl << std::endl;
 
+        // Default settings
         timeUnitLength = 150;   // In ms
         printCharacter = '#';
         printWidth = 20;
@@ -25,8 +26,10 @@ Settings::Settings() {
     else {
         file.close();
 
+        // Puts all settings into a vector
         readData(settingList);
 
+        // Enters all settings
         timeUnitLength = stoi(settingList.at(0));
         printCharacter = (settingList.at(1).at(0));
         printWidth = stoi(settingList.at(2));
@@ -48,6 +51,7 @@ Settings::Settings() {
     }
 }
 
+// Reads all values from the settings file to a string vector
 void Settings::readData(std::vector<std::string> &settingList) {
     std::string data;
     std::fstream file;
@@ -68,6 +72,7 @@ void Settings::readData(std::vector<std::string> &settingList) {
     file.close();
 }
 
+// Prints all of the settings for the user to easily see
 void Settings::printSettings() {
     std::cout << "\n\nSettings" << std::endl << std::endl << std::endl;
 
@@ -89,13 +94,14 @@ void Settings::printSettings() {
 
     std::cout << "7. " << std::setw(18) << "Q-Codes: ";
     if (qcodes == 0) {std::cout << "FALSE";} else {std::cout << "TRUE";}
-    std::cout << std::endl;
+    std::cout << std::endl << std::endl;
 
     std::cout << "Random File Settings:" << std::endl << "------------------------------" << std::endl;
     std::cout << "8. " << std::setw(18) << "Words File: " << wordFile << std::endl;
     std::cout << "9. " << std::setw(18) << "Sentences File: " << sentenceFile << std::endl;
 }
 
+// Saves all of the setting objects values to a text file
 void Settings::saveSettings() {
     std::ofstream file;
     file.open("settings.txt");
@@ -114,24 +120,3 @@ void Settings::saveSettings() {
 }
 
 
-/*
-void loadWords() {
-
-}
-
-
-void loadWords(std::string) {
-
-}
-
-
-void loadSentences() {
-
-}
-
-
-void loadSentences(std::string) {
-
-}
-
-*/
