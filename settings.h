@@ -12,7 +12,6 @@ private:
     int printHeight;
     bool numbers;
     bool punctuation;
-    bool qcodes;
     std::string wordFile;
     std::string sentenceFile;
 
@@ -30,7 +29,6 @@ public:
     int getPrintHeight() {return printHeight;}
     bool getNumbers() {return numbers;}
     bool getPunctuation() {return punctuation;}
-    bool getQcodes() {return qcodes;}
     std::string getWordFile() {return wordFile;}
     std::string getSentenceFile() {return sentenceFile;}
 
@@ -41,7 +39,6 @@ public:
     void setPrintHeight(int height) {printHeight = height;}
     void setNumbers(bool active) {numbers = active;}
     void setPunctuation(bool active) {punctuation = active;}
-    void setQcodes(bool active) {qcodes = active;}
     void setWordFile(std::string fileName) {wordFile = fileName;}
     void setSentenceFile(std::string fileName) {sentenceFile = fileName;}
 };

@@ -14,6 +14,7 @@ void practicePrintedMorse(int timeUnit, const vector<vector<int>>& morseCode) {
                 << "1.\tPractice Letters" << endl
                 << "2.\tPractice Words" << endl 
                 << "3.\tPractice Sentences" <<  endl 
+                << "4.\tPractice Q-Codes" << endl
                 << "0.\tExit to Main Menu" << endl << endl;
         cout << "Enter a number 0-3:  ";
 
@@ -21,7 +22,7 @@ void practicePrintedMorse(int timeUnit, const vector<vector<int>>& morseCode) {
         cin.ignore();
 
         // Validates user input
-        while (!cin || menuChoice > 3 || menuChoice < 0) {
+        while (!cin || menuChoice > 4 || menuChoice < 0) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
             cout << "Enter a number 0-3:  ";
@@ -71,6 +72,7 @@ void practiceFlashingMorse(int timeUnit, const vector<vector<int>>& morseCode) {
                 << "1.\tPractice Letters" << endl
                 << "2.\tPractice Words" << endl 
                 << "3.\tPractice Sentences" <<  endl 
+                << "4.\tPractice Q-Codes" << endl
                 << "0.\tExit to Main Menu" << endl << endl;
         cout << "Enter a number 0-3:  ";
 
@@ -78,7 +80,7 @@ void practiceFlashingMorse(int timeUnit, const vector<vector<int>>& morseCode) {
         cin.ignore();
 
         // Validates user input
-        while (!cin || menuChoice > 3 || menuChoice < 0) {
+        while (!cin || menuChoice > 4 || menuChoice < 0) {
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(),'\n');
             cout << "Enter a number 0-3:  ";

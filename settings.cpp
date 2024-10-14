@@ -19,7 +19,6 @@ Settings::Settings() {
         printHeight = 45;
         numbers = false;
         punctuation = false;
-        qcodes = false;
         wordFile = "words.txt";
         sentenceFile = "sentences.txt";
     }
@@ -42,9 +41,6 @@ Settings::Settings() {
         if (settingList.at(5) != "1") {
             punctuation = false;
         } else {punctuation = true;}
-        if (settingList.at(6) != "1") {
-            qcodes = false;
-        } else {qcodes = true;}
 
         wordFile = settingList.at(7);
         sentenceFile = settingList.at(8);
@@ -90,15 +86,11 @@ void Settings::printSettings() {
 
     std::cout << "6. " << std::setw(18) << "Punctuation: ";
     if (punctuation == 0) {std::cout << "FALSE";} else {std::cout << "TRUE";}
-    std::cout << std::endl;
-
-    std::cout << "7. " << std::setw(18) << "Q-Codes: ";
-    if (qcodes == 0) {std::cout << "FALSE";} else {std::cout << "TRUE";}
     std::cout << std::endl << std::endl;
 
     std::cout << "Random File Settings:" << std::endl << "------------------------------" << std::endl;
-    std::cout << "8. " << std::setw(18) << "Words File: " << wordFile << std::endl;
-    std::cout << "9. " << std::setw(18) << "Sentences File: " << sentenceFile << std::endl;
+    std::cout << "7. " << std::setw(18) << "Words File: " << wordFile << std::endl;
+    std::cout << "8. " << std::setw(18) << "Sentences File: " << sentenceFile << std::endl;
 }
 
 // Saves all of the setting objects values to a text file
@@ -112,7 +104,6 @@ void Settings::saveSettings() {
     file << "print_height:" << printHeight << std::endl;
     file << "numbers:" << numbers << std::endl;
     file << "punctuation:" << punctuation << std::endl;
-    file << "qcodes:" << qcodes << std::endl;
     file << "default_word_file:" << wordFile << std::endl;
     file << "default_sentence_file:" << sentenceFile;
 
